@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groubaud <groubaud@student.s19.be >        +#+  +:+       +#+        */
+/*   By: groubaud <groubaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:33:35 by groubaud          #+#    #+#             */
-/*   Updated: 2021/11/04 14:33:35 by groubaud         ###   ########.fr       */
+/*   Updated: 2021/11/05 18:54:10 by groubaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,11 @@ int	main(int ac, char **av)
     char *tab_pseudo[] = {"groubaud",
                     "afulmini",
                     "mykman",
-                    "pvanderl",
-                    "cmillet",
-                    "jdecorte",
+					"viforget",
+					"rvan-aud",
+					"mservais",
+					"ancoulon",
+					"pamoutaf",
                     NULL};
     int tab_len;
     int *tab_even;
