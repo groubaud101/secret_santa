@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_secret_santa.h                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groubaud <groubaud@student.s19.be >        +#+  +:+       +#+        */
+/*   By: groubaud <groubaud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 14:34:56 by groubaud          #+#    #+#             */
-/*   Updated: 2021/11/04 14:34:56 by groubaud         ###   ########.fr       */
+/*   Created: 2021/04/01 17:24:42 by groubaud          #+#    #+#             */
+/*   Updated: 2021/04/01 17:24:42 by groubaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SECRET_SANTA_H
-# define SECRET_SANTA_H
+#include <string.h>
 
-int		ft_print_error(char *str);
-char	**ft_create_tab_pseudo(char *txt);
-int		*ft_even_generator(int size, int max);
-int 	ft_send_mail(int *tab_even, char **tab_pseudo, int len);
+size_t	ft_strlen(const char *s)
+{
+	size_t	index;
 
-#endif
+	index = 0;
+	while (s[index])
+		index++;
+	return (index);
+}

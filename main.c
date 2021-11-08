@@ -13,7 +13,7 @@
 #include "ft_secret_santa.h"
 #include <stdio.h>
 
-static int	ft_print_error(char *str)
+int	ft_print_error(char *str)
 {
 	printf("ERROR\n%s\n", str);
 	return (-1);
@@ -45,20 +45,31 @@ static int ft_tab_pseudo_len(char **tab)
     return (i);
 }
 
+void	ft_aff_tab_pseudo(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		printf("tab_pseudo[%02i] : |%s|\n", i, tab[i]);
+		i++;
+	}
+	printf("\n");
+}
+
 int	main(int ac, char **av)
 {
-    char *tab_pseudo[] = {"groubaud",
-                    "afulmini",
-                    "mykman",
-					"viforget",
-					"rvan-aud",
-					"mservais",
-					"ancoulon",
-					"pamoutaf",
-                    NULL};
-    int tab_len;
-    int *tab_even;
+    char	**tab_pseudo;
+	char	*txt;
+    int		tab_len;
+    int		*tab_even;
 
+	txt = "secret_santa_pseudo.txt";
+	if (ac == 2)
+		txt = av[1];
+	tab_pseudo = ft_create_tab_pseudo(txt);
+	ft_aff_tab_pseudo(tab_pseudo);
     tab_len = ft_tab_pseudo_len(tab_pseudo);
 	tab_even = ft_even_generator(tab_len, tab_len);
 	if (ft_check_even_tab(tab_even, tab_len) == -1)

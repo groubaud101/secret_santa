@@ -14,20 +14,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// send the mail, stock a copy in secret_santa.log
+
 void	ft_mail(char *mail_user, char *mail_content)
 {
 	FILE	*fd;
 	char	cmd[150];
 
 	fd = fopen("secret_santa.log", "a+");
-	fprintf(fd, "Send mail to : %s\ncontent : |%s|\n\n",
+	fprintf(fd, "Send mail to : %s\ncontent : %s\n\n",
 			mail_user, mail_content);
-
+	printf("Send mail to : %s\ncontent : %s\n\n",
+			mail_user, mail_content);
+/*
 	sprintf(cmd, "echo %s | mail -s %s %s",
 				mail_content,
 				"TEST_secret_santa_TEST",
 				mail_user);
-	//system(cmd);
+	system(cmd);
+*/
 }	
 
 // concat the secret santa mail
@@ -40,13 +45,14 @@ int ft_send_mail(int *tab_even, char **tab_pseudo, int len)
 	char	mail_content[30];
 
 	i = 0;
+	if (remove("secret_santa.log") != 0)
+		return (ft_print_error("Fail to delete secret_santa.log"));
 	while (i < len)
 	{
 		sprintf(mail_user, "%s@student.s19.be", tab_pseudo[i]);
-		sprintf(mail_content, "NOT Your target is %s .", tab_pseudo[tab_even[i]]);
+		sprintf(mail_content, "Your target is %s .", tab_pseudo[tab_even[i]]);
 		ft_mail(mail_user, mail_content);
 		i++;
 	}
-
 	return (1);
 }
