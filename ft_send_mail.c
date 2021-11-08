@@ -45,8 +45,7 @@ int ft_send_mail(int *tab_even, char **tab_pseudo, int len)
 	char	mail_content[30];
 
 	i = 0;
-	if (remove("secret_santa.log") != 0)
-		return (ft_print_error("Fail to delete secret_santa.log"));
+	remove("secret_santa.log");
 	while (i < len)
 	{
 		sprintf(mail_user, "%s@student.s19.be", tab_pseudo[i]);
