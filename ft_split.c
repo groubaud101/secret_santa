@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groubaud <groubaud@student.s19.be>         +#+  +:+       +#+        */
+/*   By: groubaud <groubaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 17:24:31 by groubaud          #+#    #+#             */
-/*   Updated: 2021/04/01 17:24:31 by groubaud         ###   ########.fr       */
+/*   Updated: 2021/11/10 16:34:44 by groubaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ static char	**ft_split_two(char const *s, char c, char **tab)
 		if (*s)
 		{
 			len = ft_special_strlen(s, 0, c);
-			len = len - (s[len] == c);
+			//len = len - (s[len] == c); //version wsl
 			tab[index] = ft_strndup(s, len);
 			if (!(tab[index]))
 				return (ft_free_tab(tab, index));
-			s = s + len + 1;
+			s = s + len;// + 1; // version wsl
 			index++;
 		}
 	}
